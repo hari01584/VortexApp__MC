@@ -1,0 +1,33 @@
+<resources>
+  <string name="app_name">VorteXConnect</string>
+  <string name="menu_servers">Servers</string>
+  <string name="menu_clan">Clan</string>
+  <string name="menu_chat">Chat</string>
+  <string name="menu_profile">Me</string>
+  <string name="date_header_yesterday">Yesterday</string>
+  <string name="hint_enter_a_message">Enter message</string>
+  <string name="date_header_today">Today</string>
+  <string name="no_firestore_recs">No user records found, Creating one!!</string>
+  <string name="first_time_open">First time open detected! Initilizing</string>
+  <string name="successful_login">Success Login</string>
+  <string name="create_group">Create group</string>
+  <string name="search_no_user_found">Search no user found :(</string>
+  <string name="account_null">Your account is not initlized yet! Reopen this fragment :(</string>
+  <string name="add_plus_desc">Add</string>
+  <string name="server_creat_header">Server\'s Creation Menu</string>
+  <string name="ip_server">Server Ip</string>
+  <string name="port_server">Server Port</string>
+  <string name="start_server">Start Server</string>
+  <string name="password_server">(Optional) Password</string>
+  <string name="name_server">Server Name</string>
+  <string name="offline_invalid_server">Server unreachable, Is your server offline/invalid?</string>
+  <string name="servers_list">Servers List</string>
+  <string name="refresh_servers">Refresh Servers (Swipe from top) to get updated list!!</string>
+  <string name="delay_servers">Server cache not built, Will take little longer to list server\'s, Wait!!</string>
+  <string name="vpn_not_permitted">VPN Permission not permitted, Cannot start minecraft, Permit VPN and rejoin server to play.</string>
+  <string name="minecraft_not_found">Minecraft not found, You need minecraft for this action.</string>
+  <string name="default_template_name">Name</string>
+  <string name="default_template_subname">Subname</string>
+  <string name="edit_profile_text">Edit Profile</string>
+  <string name="give_vpn_perm">Please allow app to have vpn permission so as to work properly, Also rejoin the server after granting!</string>
+</resources>

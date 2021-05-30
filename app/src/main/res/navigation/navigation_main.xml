@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/first_fragment">
+
+    <fragment
+        android:id="@+id/first_fragment"
+        android:name="com.skullzbones.vortexconnect.ui.servers.ServersFragment"
+        android:label="@string/menu_servers"
+        tools:layout="@layout/servers_fragment" >
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/second_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/second_fragment"
+        android:name="com.skullzbones.vortexconnect.ui.clans.ClansFragment"
+        android:label="@string/menu_clan"
+        tools:layout="@layout/clans_fragment" >
+        <action
+            android:id="@+id/action_secondFragment_to_thirdFragment"
+            app:destination="@id/third_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/third_fragment"
+        android:name="com.skullzbones.vortexconnect.ui.chat.ChatFragment"
+        android:label="@string/menu_clan"
+        tools:layout="@layout/chat_fragment" >
+        <action
+            android:id="@+id/action_thirdFragment_to_fourthFragment"
+            app:destination="@id/fourth_fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fourth_fragment"
+        android:name="com.skullzbones.vortexconnect.ui.me.MeFragment"
+        android:label="@string/menu_profile"
+        tools:layout="@layout/me_fragment" />
+</navigation>

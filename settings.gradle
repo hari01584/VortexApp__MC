@@ -1,0 +1,3 @@
+rootProject.name = "VorteXConnect"
+include ':app'
+include ':mcserverproxy'

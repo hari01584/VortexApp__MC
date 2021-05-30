@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first_fragment"
+        android:title="@string/menu_servers"
+        android:icon="@drawable/outline_videogame_asset_24"/>
+
+    <item
+        android:id="@+id/second_fragment"
+        android:title="@string/menu_clan"
+        android:icon="@drawable/outline_groups_24"/>
+
+    <item
+        android:id="@+id/third_fragment"
+        android:title="@string/menu_chat"
+        android:icon="@drawable/outline_chat_24"/>
+
+    <item
+        android:id="@+id/fourth_fragment"
+        android:title="@string/menu_profile"
+        android:icon="@drawable/outline_perm_identity_24"/>
+
+</menu>

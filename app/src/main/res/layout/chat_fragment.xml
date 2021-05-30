@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.chat.ChatFragment"
+    android:orientation="vertical">
+
+    <com.mancj.materialsearchbar.MaterialSearchBar
+        android:id="@+id/searchBar"
+        style="@style/CustomSearchBar"
+        android:tooltipText="Write"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        app:mt_hint="Search Users"
+        app:mt_maxSuggestionsCount="10"/>
+
+    <com.stfalcon.chatkit.dialogs.DialogsList
+        android:id="@+id/dialogsList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:dialogDividerLeftPadding="0dp"
+        app:dialogMessageTextSize="17sp"
+        app:dialogTitleTextStyle="bold"
+        app:dialogUnreadBubbleBackgroundColor="@color/purple_200"
+        app:dialogUnreadItemBackground="@color/transparent"
+        app:dialogUnreadTitleTextStyle="bold" />
+
+</LinearLayout>

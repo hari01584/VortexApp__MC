@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:orientation="vertical">
+
+  <androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
+
+    <RelativeLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="8dp">
+
+      <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:padding="4dp" />
+
+      <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_toRightOf="@id/imageView"
+        android:text="Welcome to my server! Let's play!!"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textColor="@color/colorAccent"
+        android:textSize="16sp" />
+
+      <TextView
+        android:id="@+id/textViewShortDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/textViewTitle"
+        android:layout_toRightOf="@id/imageView"
+        android:text="MOTD"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+        android:textSize="12sp" />
+
+      <TextView
+        android:id="@+id/textViewPlayers"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:layout_below="@+id/textViewShortDesc"
+        android:layout_toEndOf="@+id/imageView"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/colorPrimary"
+        android:text="3/10"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+        android:textSize="16sp" />
+
+
+    </RelativeLayout>
+
+  </androidx.cardview.widget.CardView>
+
+</LinearLayout>
