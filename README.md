@@ -7,7 +7,6 @@ Vortex Connect(VC) is lobby based minecraft servers hosting and joining app! To 
   - Simple profile display to get your username, which can be exchanged to allow in-app chats.
 
 # SCREENSHOTS:
-![test image size](/screenshots/01.png?raw=true){:height="10%" width="10%"}
 <img src="/screenshots/01.png?raw=true" alt="drawing" width="200"/>
 
 
