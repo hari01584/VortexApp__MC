@@ -7,10 +7,10 @@ Vortex Connect(VC) is lobby based minecraft servers hosting and joining app! To 
   - Simple profile display to get your username, which can be exchanged to allow in-app chats.
 
 # SCREENSHOTS:
-<img src="/screenshots/01.png?raw=true" width="250" height="100">
-<img src="/screenshots/02.png?raw=true" width="250" height="100">
-<img src="/screenshots/03.png?raw=true" width="250" height="100">
-<img src="/screenshots/04.png?raw=true" width="250" height="100">
+<img src="/screenshots/01.png?raw=true" width="150" height="150">
+<img src="/screenshots/02.png?raw=true" width="150" height="150">
+<img src="/screenshots/03.png?raw=true" width="150" height="150">
+<img src="/screenshots/04.png?raw=true" width="150" height="150">
 
 ### Installation
 If nothing goes wrong the link to playstore apk will be [**here**](https://play.google.com/store/apps/details?id=com.skullzbones.vortexconnect)!
