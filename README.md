@@ -11,6 +11,7 @@ Vortex Connect(VC) is lobby based minecraft servers hosting and joining app! To 
 ![Alt text](/screenshots/02.png?raw=true "SS02" | width=100)
 ![Alt text](/screenshots/03.png?raw=true "SS03" | width=100)
 ![Alt text](/screenshots/04.png?raw=true "SS04" | width=100)
+<img src="/screenshots/01.png?raw=true" width="100" height="100">
 
 ### Installation
 If nothing goes wrong the link to playstore apk will be [**here**](https://play.google.com/store/apps/details?id=com.skullzbones.vortexconnect)!
