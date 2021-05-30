@@ -9,7 +9,7 @@ Vortex Connect(VC) is lobby based minecraft servers hosting and joining app! To 
 # SCREENSHOTS:
 <img src="/screenshots/01.png?raw=true" width="150" height="150">
 
-![](/screenshots/01.png?raw=true | width=100)
+![](https://github.com/hari01584/VortexApp__MC/blob/main/screenshots/01.png | width=100)
 
 
 
