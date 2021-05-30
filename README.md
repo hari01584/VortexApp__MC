@@ -8,6 +8,7 @@ Vortex Connect(VC) is lobby based minecraft servers hosting and joining app! To 
 
 # SCREENSHOTS:
 <img src="/screenshots/01.png?raw=true" alt="drawing" width="250"/><img src="/screenshots/02.png?raw=true" alt="drawing" width="250"/>
+
 <img src="/screenshots/03.png?raw=true" alt="drawing" width="250"/><img src="/screenshots/04.png?raw=true" alt="drawing" width="250"/>
 
 ### Installation
