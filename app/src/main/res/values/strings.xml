@@ -30,4 +30,5 @@
   <string name="default_template_subname">Subname</string>
   <string name="edit_profile_text">Edit Profile</string>
   <string name="give_vpn_perm">Please allow app to have vpn permission so as to work properly, Also rejoin the server after granting!</string>
+  <string name="givestorage">Give storage permission to change inGame Name!!</string>
 </resources>

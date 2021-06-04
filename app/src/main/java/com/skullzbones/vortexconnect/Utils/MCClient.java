@@ -4,15 +4,20 @@ import android.content.Context;
 import com.skullzbones.mcserverproxy.Exceptions.MinecraftNotFoundException;
 import com.skullzbones.mcserverproxy.Exceptions.NoVPNException;
 import com.skullzbones.mcserverproxy.Exceptions.ServerNotSetException;
+import com.skullzbones.mcserverproxy.Exceptions.StoragePermissionNotGiven;
 import com.skullzbones.mcserverproxy.MConnector;
+import com.skullzbones.vortexconnect.MainActivity;
 import com.skullzbones.vortexconnect.R;
 import com.skullzbones.vortexconnect.model.Server;
 
 public class MCClient {
-  public static void joinAndPlay(Context context, String ip, Integer port){
+  public static void joinAndPlay(Context context, String ip, Integer port) throws StoragePermissionNotGiven{
     try {
+
       MConnector.with(context)
           .setTargetServer(ip, port)
+          .setInGameName(MainActivity.myAccount.getValue().name)
+          .setSuppressStoragePermissions(false)
           .start();
     } catch (NoVPNException e) {
       e.printStackTrace();
@@ -22,6 +27,8 @@ public class MCClient {
       ToastUtils.out(context, R.string.minecraft_not_found);
     } catch (ServerNotSetException e) {
       e.printStackTrace();
+    } catch (StoragePermissionNotGiven e){
+      throw new StoragePermissionNotGiven();
     }
   }
 

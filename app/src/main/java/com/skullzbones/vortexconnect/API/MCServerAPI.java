@@ -27,6 +27,8 @@ public class MCServerAPI {
   private static String API_REPORTS_SERVERS = "http://vortex.skullzbones.com/api2/reportOfflineServer.php";
 
   public static void displayAnnouncements(Context context){
+    Log.d(TAG, "displayAnnouncements");
+
     Ion.with(context)
         .load(API_ANNOUNCEMENTS)
         .asJsonObject()
@@ -34,6 +36,7 @@ public class MCServerAPI {
           @Override
           public void onCompleted(Exception e, JsonObject result) {
             if(result==null){
+              Log.d(TAG, "Null return displayAnnouncements");
               e.printStackTrace();
               return;
             }
@@ -41,6 +44,8 @@ public class MCServerAPI {
             SimpleAPIResult res= gson.fromJson(result, SimpleAPIResult.class);
             if(res.code==1)
               ToastUtils.make(context, res.message);
+
+            Log.d(TAG, result.toString());
           }
         });
   }

@@ -1,7 +1,9 @@
 package com.skullzbones.vortexconnect.ui.servers;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.VpnService;
 import android.util.Log;
 import android.view.View.OnClickListener;
@@ -11,6 +13,8 @@ import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -35,6 +39,7 @@ import com.koushikdutta.async.future.FutureCallback;
 import com.skullzbones.mcserverproxy.Exceptions.MinecraftNotFoundException;
 import com.skullzbones.mcserverproxy.Exceptions.NoVPNException;
 import com.skullzbones.mcserverproxy.Exceptions.ServerNotSetException;
+import com.skullzbones.mcserverproxy.Exceptions.StoragePermissionNotGiven;
 import com.skullzbones.mcserverproxy.MConnector;
 import com.skullzbones.vortexconnect.API.ChatAPI;
 import com.skullzbones.vortexconnect.API.FirebaseCreds;
@@ -85,7 +90,7 @@ public class ServersFragment extends Fragment {
         result -> {
           if (result.getResultCode() == Activity.RESULT_OK) {
             // There are no request codes
-            Intent data = result.getData();
+            //Intent data = result.getData();
           }
         });
     return v;
@@ -98,12 +103,18 @@ public class ServersFragment extends Fragment {
     mViewModel = new ViewModelProvider(this).get(ServersViewModel.class);
 
     if (mViewModel.servers.size() == 0) {
+      Log.d(TAG, "Reached here");
       MCServerAPI.displayAnnouncements(getContext());
 
       recyclerView.setHasFixedSize(true);
       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
       mViewModel.adapter = new ServersAdapter(getContext(), mViewModel.servers,
           s -> {
+            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+              ToastUtils.out(getContext(), R.string.givestorage);
+              ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+            }
+
             Intent i = VpnService.prepare(getContext());
             if(i!=null){
               ToastUtils.out(getContext(), R.string.give_vpn_perm);
