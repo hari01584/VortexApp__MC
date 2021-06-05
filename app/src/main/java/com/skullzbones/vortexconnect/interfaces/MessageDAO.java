@@ -20,7 +20,7 @@ public interface MessageDAO {
     @Query("SELECT * FROM message")
     Flowable<List<Message>> getAll();
 
-    @Query("SELECT * FROM message GROUP BY user ORDER BY createdAt DESC")
+    @Query("SELECT *, MAX(createdAt) FROM message GROUP BY user")
     LiveData<List<Message>> getDialogMakerMessages();
 
     @Query("SELECT * FROM message WHERE user IS :userId ORDER BY createdAt DESC LIMIT :limit")

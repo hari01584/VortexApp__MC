@@ -29,6 +29,7 @@ import com.skullzbones.vortexconnect.SharedViewModel;
 import com.skullzbones.vortexconnect.Utils.ToastUtils;
 import com.skullzbones.vortexconnect.converters.ArrayConverter;
 import com.skullzbones.vortexconnect.fake.DialogsFixtures;
+import com.skullzbones.vortexconnect.fake.UserPersona;
 import com.skullzbones.vortexconnect.interfaces.ChatAPIMessage;
 import com.skullzbones.vortexconnect.interfaces.UserAPIQuery;
 import com.skullzbones.vortexconnect.model.Dialog;
@@ -117,6 +118,7 @@ public class ChatFragment extends Fragment implements DialogsListAdapter.OnDialo
     private void refreshDialogList(List<Message> messages) {
         ArrayList<com.skullzbones.vortexconnect.model.Dialog> d = new ArrayList<>();
         for(Message message : messages){
+            Log.i(TAG, "Ref"+message.toString());
             User sender = message.getSenderUser();
             String id = sender.id;
             String dialogPhoto = sender.avatar;
@@ -134,8 +136,11 @@ public class ChatFragment extends Fragment implements DialogsListAdapter.OnDialo
                             users,
                             message,
                             count);
-
+            if(fromMess.getId().equals("0")) continue;
             d.add(fromMess);
+        }
+        if(d.size() == 0){
+            d.add(UserPersona.getAdminMessage());
         }
         mViewModel.dialogs.setValue(d);
     }
@@ -157,6 +162,7 @@ public class ChatFragment extends Fragment implements DialogsListAdapter.OnDialo
         mViewModel.dialogsAdapter.setOnDialogClickListener(this);
         mViewModel.dialogsAdapter.setDatesFormatter(this);
         dialogsList.setAdapter(mViewModel.dialogsAdapter);
+
     }
 
     @Override

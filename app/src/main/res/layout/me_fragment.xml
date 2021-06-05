@@ -69,6 +69,7 @@
                       android:background="@drawable/profile_bk"/>
 
                     <TextView
+                      android:id="@+id/textOnclick"
                       android:text="@string/edit_profile_text"
                       android:paddingTop="10dp"
                       style="@style/profileStyledBackButton" />

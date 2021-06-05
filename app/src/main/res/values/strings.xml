@@ -31,4 +31,11 @@
   <string name="edit_profile_text">Edit Profile</string>
   <string name="give_vpn_perm">Please allow app to have vpn permission so as to work properly, Also rejoin the server after granting!</string>
   <string name="givestorage">Give storage permission to change inGame Name!!</string>
+  <string name="anony_user_found">Anonymous user found, Please signin before using this feature.</string>
+  <string name="to_change_prof">To change profile image or name, Click on the top image, or your name to bring a popup, Enter the new value and change it xD</string>
+  <string name="invalid_url">Url is invalid! Check again.</string>
+  <string name="updated_image">Successfully updated image!</string>
+  <string name="updated_name">Successfully Updated!</string>
+  <string name="too_long_name"><![CDATA[Error! Long name >20]]></string>
+  <string name="first_time_anony">Anonymous account created! If you like the app then consider logging with google account at next app launch.</string>
 </resources>

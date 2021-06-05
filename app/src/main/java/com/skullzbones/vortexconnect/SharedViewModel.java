@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NotNull;
 public class SharedViewModel extends ViewModel {
    // Preference_BasicPrefs basicPrefs;
 
-    FirebaseAuth mAuth;
+    public FirebaseAuth mAuth;
     DatabaseReference mDatabase;
 
     MutableLiveData<String> mUserId = new MutableLiveData<>();

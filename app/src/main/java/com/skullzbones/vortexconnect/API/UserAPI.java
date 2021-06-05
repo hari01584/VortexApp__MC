@@ -3,6 +3,7 @@ package com.skullzbones.vortexconnect.API;
 import android.content.Context;
 import android.nfc.Tag;
 import android.util.Log;
+import android.webkit.URLUtil;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -88,8 +89,36 @@ public class UserAPI {
                 });
     }
 
+    public static void updateImage(Context context, String targUrl, FirebaseUser user){
+      if(!URLUtil.isValidUrl(targUrl)){
+        ToastUtils.out(context, R.string.invalid_url);
+        return;
+      }
+      firestore.collection("users").document(user.getUid())
+          .update("imageUrl", targUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
+        @Override
+        public void onSuccess(Void unused) {
+          ToastUtils.out(context, R.string.updated_image);
+        }
+      });
+    }
 
-    public static void getUser(String uid, UserAPIQuery query){
+  public static void updateDisplayName(Context context, String name, FirebaseUser user){
+    if(name.length() > 20){
+      ToastUtils.out(context, R.string.too_long_name);
+      return;
+    }
+    firestore.collection("users").document(user.getUid())
+        .update("displayName", name).addOnSuccessListener(new OnSuccessListener<Void>() {
+      @Override
+      public void onSuccess(Void unused) {
+        ToastUtils.out(context, R.string.updated_name);
+      }
+    });
+  }
+
+
+  public static void getUser(String uid, UserAPIQuery query){
         if(uid.startsWith("admin")){
           query.returnsUser(UserPersona.getAdminUserPersona(uid));
           return;
@@ -121,6 +150,7 @@ public class UserAPI {
             return MainActivity.databaseMain.userDAO().getUserByUid(uid).blockingGet();
         }
         catch (EmptyResultSetException ex){
+            queryFirebaseUser(uid, user -> { });
             return UserPersona.getInvalidUserPersona();
         }
     }

@@ -7,6 +7,7 @@ import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.koushikdutta.async.http.NameValuePair;
 import com.koushikdutta.ion.Ion;
+import com.skullzbones.mcserverproxy.Exceptions.StoragePermissionNotGiven;
 import com.skullzbones.vortexconnect.MainActivity;
 import com.skullzbones.vortexconnect.R;
 import com.skullzbones.vortexconnect.Utils.MCClient;

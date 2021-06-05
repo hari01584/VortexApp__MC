@@ -4,7 +4,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/VorteXConnect.iml" filepath="$PROJECT_DIR$/.idea/modules/VorteXConnect.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/VorteXConnect.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/VorteXConnect.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/mcserverproxy/VorteXConnect.mcserverproxy.iml" filepath="$PROJECT_DIR$/.idea/modules/mcserverproxy/VorteXConnect.mcserverproxy.iml" />
     </modules>
   </component>
 </project>

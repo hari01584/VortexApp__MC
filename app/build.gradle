@@ -34,7 +34,8 @@ dependencies {
     implementation 'io.grpc:grpc-stub:1.38.0'
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53' // necessary for Java 9+
 
-    implementation 'com.github.hari01584:libMcServerProxy:0.3pre'
+//    implementation(project(":mcserverproxy")) locally testing with plugin :D
+    implementation 'com.github.hari01584:libMcServerProxy:0.4'
 
     implementation 'com.squareup.picasso:picasso:2.8'
     implementation 'de.hdodenhof:circleimageview:3.1.0'
@@ -52,6 +53,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-database'
     implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.android.gms:play-services-auth:19.0.0'
 
     implementation "com.github.skydoves:preferenceroom:1.2.1"
     implementation 'androidx.recyclerview:recyclerview:1.2.0'

@@ -1,6 +1,7 @@
 package com.skullzbones.vortexconnect.ui.servers;
 
 import android.Manifest;
+import android.Manifest.permission;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -110,7 +111,7 @@ public class ServersFragment extends Fragment {
       recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
       mViewModel.adapter = new ServersAdapter(getContext(), mViewModel.servers,
           s -> {
-            if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(getActivity(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
               ToastUtils.out(getContext(), R.string.givestorage);
               ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
             }

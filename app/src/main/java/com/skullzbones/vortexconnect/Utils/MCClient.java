@@ -1,6 +1,7 @@
 package com.skullzbones.vortexconnect.Utils;
 
 import android.content.Context;
+
 import com.skullzbones.mcserverproxy.Exceptions.MinecraftNotFoundException;
 import com.skullzbones.mcserverproxy.Exceptions.NoVPNException;
 import com.skullzbones.mcserverproxy.Exceptions.ServerNotSetException;
@@ -11,7 +12,7 @@ import com.skullzbones.vortexconnect.R;
 import com.skullzbones.vortexconnect.model.Server;
 
 public class MCClient {
-  public static void joinAndPlay(Context context, String ip, Integer port) throws StoragePermissionNotGiven{
+  public static void joinAndPlay(Context context, String ip, Integer port) {
     try {
 
       MConnector.with(context)
@@ -28,7 +29,7 @@ public class MCClient {
     } catch (ServerNotSetException e) {
       e.printStackTrace();
     } catch (StoragePermissionNotGiven e){
-      throw new StoragePermissionNotGiven();
+      e.printStackTrace();
     }
   }
 
