@@ -103,7 +103,7 @@ public class ServersFragment extends Fragment {
     super.onViewCreated(view, savedInstanceState);
     mViewModel = new ViewModelProvider(this).get(ServersViewModel.class);
 
-    if (mViewModel.servers.size() == 0) {
+    if (mViewModel.adapter == null) {
       Log.d(TAG, "Reached here");
       MCServerAPI.displayAnnouncements(getContext());
 
@@ -150,7 +150,7 @@ public class ServersFragment extends Fragment {
   }
 
   public void callfillRefresh() {
-    mViewModel.servers.clear();
+
     MCServerAPI.listAllServers(getContext(), (e, result) -> {
       if(result==null){
         mViewModel.notifyUpdate.postValue(true);
@@ -215,4 +215,20 @@ public class ServersFragment extends Fragment {
 
   }
 
+  @Override
+  public void onPause() {
+    super.onPause();
+  }
+
+  @Override
+  public void onResume() {
+    Log.i(TAG, "onDestroy");
+    super.onResume();
+  }
+
+  @Override
+  public void onDestroy() {
+    Log.i(TAG, "onDestroy");
+    super.onDestroy();
+  }
 }

@@ -45,8 +45,6 @@ public class MCServerAPI {
             SimpleAPIResult res= gson.fromJson(result, SimpleAPIResult.class);
             if(res.code==1)
               ToastUtils.make(context, res.message);
-
-            Log.d(TAG, result.toString());
           }
         });
   }
