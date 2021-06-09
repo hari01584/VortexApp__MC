@@ -150,7 +150,7 @@ public class ServersFragment extends Fragment {
   }
 
   public void callfillRefresh() {
-
+    mViewModel.servers.clear();
     MCServerAPI.listAllServers(getContext(), (e, result) -> {
       if(result==null){
         mViewModel.notifyUpdate.postValue(true);
