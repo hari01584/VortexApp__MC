@@ -31,6 +31,7 @@ public class CreateActivity extends AppCompatActivity implements OnClickListener
   ActivityResultLauncher<Intent> someActivityResultLauncher;
 
   Button button;
+  Button close;
   EditText ipedit;
   EditText portedit;
   EditText nameedit;
@@ -58,14 +59,20 @@ public class CreateActivity extends AppCompatActivity implements OnClickListener
     StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
     StrictMode.setThreadPolicy(policy);
     button = findViewById(R.id.start_button);
+    close = findViewById(R.id.close_button);
     button.setOnClickListener(this);
+
+    close.setOnClickListener(view -> {
+        MCServerAPI.closeMyServer(this);
+    });
+
   }
 
   private void loadLastServer() {
     SharedPreferences prefs = getSharedPreferences(MY_PREFS_NAME, MODE_PRIVATE);
     String i = prefs.getString("ip", "");
     int p = prefs.getInt("port", 19132);
-    String n = prefs.getString("name", "Join my minecraft servers");
+    String n = prefs.getString("name", "Join my minecraft server!");
     String pas = prefs.getString("pass", "");
     ipedit.setText(i);
     nameedit.setText(n);

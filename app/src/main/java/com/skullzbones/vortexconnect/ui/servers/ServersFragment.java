@@ -35,6 +35,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout.OnRefreshListener;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
 import com.skullzbones.mcserverproxy.Exceptions.MinecraftNotFoundException;
@@ -183,15 +184,18 @@ public class ServersFragment extends Fragment {
                     return;
                   }
                   boolean online = r.get("online").getAsBoolean();
-                  if (online) {
+                  JsonElement v = r.get("version");
+                  String ver;
+                  if (online && v != null && !(ver=v.getAsString()).equals("0.0.0")) {
                     int pmax = r.getAsJsonObject("players").get("max").getAsInt();
                     int onl = r.getAsJsonObject("players").get("online").getAsInt();
                     s.player = onl + "/" + pmax;
-                    s.shortdesc+=String.format("(ver. %s)", r.get("version").getAsString());
+                    s.shortdesc+=String.format("(ver. %s)", ver);
                   }
                   else{
                     s.player = "0/0";
                     s.shortdesc+=" (Probable Offline)";
+                    MCServerAPI.reportOfflineServer(getContext(), s);
                   }
                   mViewModel.servers.add(s);
                   mViewModel.notifyUpdate.postValue(true);

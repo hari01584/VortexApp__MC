@@ -2,6 +2,7 @@ package com.skullzbones.vortexconnect.API;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.koushikdutta.async.future.FutureCallback;
@@ -14,6 +15,7 @@ import com.skullzbones.vortexconnect.Utils.MCClient;
 import com.skullzbones.vortexconnect.Utils.ToastUtils;
 import com.skullzbones.vortexconnect.model.Server;
 import com.skullzbones.vortexconnect.model.SimpleAPIResult;
+import com.skullzbones.vortexconnect.ui.servers.CreateActivity;
 import java.util.Timer;
 import java.util.TimerTask;
 import javax.annotation.Nullable;
@@ -21,11 +23,12 @@ import javax.annotation.Nullable;
 public class MCServerAPI {
 
   private static final String TAG = "t/MCServerCreater";
-  private static String API_ANNOUNCEMENTS = "http://vortex.skullzbones.com/announcement.php";
+  private static final String API_ANNOUNCEMENTS = "http://vortex.skullzbones.com/announcement.php";
 
-  private static String API_CREATE_SERVER_URL = "http://vortex.skullzbones.com/api2/registerServer.php";
-  private static String API_GET_SERVERS = "http://vortex.skullzbones.com/api2/listServers.php";
-  private static String API_REPORTS_SERVERS = "http://vortex.skullzbones.com/api2/reportOfflineServer.php";
+  private static final String API_CREATE_SERVER_URL = "http://vortex.skullzbones.com/api2/registerServer.php";
+  private static final String API_GET_SERVERS = "http://vortex.skullzbones.com/api2/listServers.php";
+  private static final String API_REPORTS_SERVERS = "http://vortex.skullzbones.com/api2/reportOfflineServer.php";
+  private static final String API_CLOSE_SERVERS = "http://vortex.skullzbones.com/api2/closeMyServer.php";
 
   public static void displayAnnouncements(Context context){
     Log.d(TAG, "displayAnnouncements");
@@ -97,6 +100,7 @@ public class MCServerAPI {
   }
 
   public static void reportOfflineServer(Context context, Server s) {
+    Log.d(TAG, "Offline Reported "+s.serverIp);
     JsonObject json = new JsonObject();
     json.addProperty("server_user", s.id);
     json.addProperty("targetIp", s.serverIp);
@@ -114,6 +118,24 @@ public class MCServerAPI {
           @Override
           public void onCompleted(Exception e, JsonObject result) {
 
+          }
+        });
+  }
+
+  public static void closeMyServer(Context context) {
+    if(context==null) return;
+    Ion.with(context)
+        .load("POST", API_CLOSE_SERVERS)
+        .setHeader("uid", FirebaseCreds.uid)
+        .setHeader("token", FirebaseCreds.token)
+        .asJsonObject()
+        .setCallback(new FutureCallback<JsonObject>() {
+          @Override
+          public void onCompleted(Exception e, JsonObject result) {
+            Log.d(TAG, result.toString());
+            Gson gson = new Gson();
+            SimpleAPIResult res= gson.fromJson(result, SimpleAPIResult.class);
+            ToastUtils.make(context, res.message);
           }
         });
   }
