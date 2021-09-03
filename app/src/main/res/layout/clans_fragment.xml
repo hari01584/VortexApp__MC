@@ -21,14 +21,29 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+      android:id="@+id/text_donate_show"
+      android:textStyle="bold"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:fontFamily="monospace"
+      android:text="Until then consider donating to show developer some support!"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     <Button
+      android:id="@+id/button_donate_3"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
+      android:layout_margin="8dp"
       android:layout_marginTop="8dp"
-      android:layout_marginEnd="16dp"
+      android:padding="16dp"
       android:text="@string/Donate_3d"
       app:layout_constraintEnd_toEndOf="parent"
-      app:layout_constraintTop_toBottomOf="@+id/textView" />
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/text_donate_show" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
