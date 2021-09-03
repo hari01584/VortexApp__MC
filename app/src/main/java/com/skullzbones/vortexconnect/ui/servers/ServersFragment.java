@@ -186,6 +186,7 @@ public class ServersFragment extends Fragment {
                   boolean online = r.get("online").getAsBoolean();
                   JsonElement v = r.get("version");
                   String ver;
+                  Log.d(TAG, String.valueOf(v));
                   if (online && v != null && !(ver=v.getAsString()).equals("0.0.0")) {
                     int pmax = r.getAsJsonObject("players").get("max").getAsInt();
                     int onl = r.getAsJsonObject("players").get("online").getAsInt();

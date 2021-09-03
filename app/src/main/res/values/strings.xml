@@ -40,4 +40,5 @@
   <string name="first_time_anony">Anonymous account created! If you like the app then consider logging with google account at next app launch.</string>
   <string name="stop_server">Close any existing server</string>
   <string name="closed_all_servers">Closed All Servers!!</string>
+  <string name="Donate_3d">Donate 3$</string>
 </resources>

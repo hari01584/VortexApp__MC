@@ -7,6 +7,7 @@ import android.widget.Toast;
 public class ToastUtils {
     public static String TAG = "l/ToastUtils";
     public static void out(Context context, int resid){
+        if(context == null) return;
         String mess = context.getResources().getString(resid);
         Log.i(TAG, mess);
         Toast.makeText(context, mess, Toast.LENGTH_SHORT).show();
