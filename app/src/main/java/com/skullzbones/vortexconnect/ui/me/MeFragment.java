@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.ContextThemeWrapper;
@@ -29,6 +30,7 @@ import com.skullzbones.vortexconnect.Utils.ToastUtils;
 import com.skullzbones.vortexconnect.interfaces.ClickInterface;
 import com.skullzbones.vortexconnect.model.User;
 import com.squareup.picasso.Picasso;
+import java.util.Objects;
 import org.jetbrains.annotations.NotNull;
 
 public class MeFragment extends Fragment {
@@ -90,6 +92,10 @@ public class MeFragment extends Fragment {
         else{
             setProfileData();
         }
+
+        RelativeLayout loginRl =(RelativeLayout) getActivity().findViewById(R.id.login_rl);
+        loginRl.setOnClickListener(v -> ((MainActivity) requireActivity()).googleSignInFlowStart());
+
     }
 
     void setProfileData(){

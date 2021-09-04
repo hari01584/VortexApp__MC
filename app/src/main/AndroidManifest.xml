@@ -17,7 +17,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.VorteXConnect"
     android:usesCleartextTraffic="true">
-    <activity android:name=".ui.servers.CreateActivity"></activity>
+    <activity android:name=".ui.servers.CreateActivity" />
     <activity android:name=".MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

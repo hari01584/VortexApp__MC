@@ -33,17 +33,50 @@
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-
     <Button
       android:id="@+id/button_donate_3"
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_margin="8dp"
+      android:layout_height="60dp"
       android:layout_marginTop="8dp"
-      android:padding="16dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
       android:text="@string/Donate_3d"
       app:layout_constraintEnd_toEndOf="parent"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/text_donate_show" />
+
+    <Button
+      android:id="@+id/button_donate_10"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      android:text="@string/Donate_10"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_donate_3" />
+
+    <Button
+      android:id="@+id/button_donate_50"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      android:text="@string/Donate_50"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_donate_10" />
+
+
+    <Button
+      android:id="@+id/button_donate_100"
+      android:layout_width="match_parent"
+      android:layout_height="60dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="8dp"
+      android:text="@string/Donate_100"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/button_donate_50" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

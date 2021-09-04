@@ -7,6 +7,7 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,6 +25,7 @@ public class SharedViewModel extends ViewModel {
 
     public FirebaseAuth mAuth;
     DatabaseReference mDatabase;
+    private GoogleSignInClient mGoogleSignInClient;
 
     MutableLiveData<String> mUserId = new MutableLiveData<>();
     boolean isLogged;

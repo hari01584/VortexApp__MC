@@ -10,7 +10,7 @@ public class ToastUtils {
         if(context == null) return;
         String mess = context.getResources().getString(resid);
         Log.i(TAG, mess);
-        Toast.makeText(context, mess, Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, mess, Toast.LENGTH_LONG).show();
     }
 
     public static void make(Context context, String message){

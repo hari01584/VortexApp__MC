@@ -12,7 +12,7 @@ public class MCQueryAPI {
 
   public static void QueryServer(Context context, String url, Integer port, FutureCallback<JsonObject> callback){
     String callUrl = String.format(API_URL, url, port);
-
+    if(context == null) return;
     Ion.with(context)
         .load(callUrl)
         .noCache()

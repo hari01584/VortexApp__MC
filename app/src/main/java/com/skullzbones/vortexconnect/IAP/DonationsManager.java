@@ -18,7 +18,10 @@ public class DonationsManager {
   Context context;
   IapConnector iapConnector;
   List<String> consumablesList = Arrays.asList(
-      "vortex_donate_3"
+      "vortex_donate_3",
+      "vortex_donate_10",
+      "vortex_donate_50",
+      "vortex_donate_100"
   );
 
   public DonationsManager(Context context){

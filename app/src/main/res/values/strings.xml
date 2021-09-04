@@ -37,9 +37,14 @@
   <string name="updated_image">Successfully updated image!</string>
   <string name="updated_name">Successfully Updated!</string>
   <string name="too_long_name"><![CDATA[Error! Long name >20]]></string>
-  <string name="first_time_anony">Anonymous account created! If you like the app then consider logging with google account at next app launch.</string>
+  <string name="first_time_anony">Anonymous account created! If you like the app then consider logging with google account on profiles page!!!</string>
   <string name="stop_server">Close any existing server</string>
   <string name="closed_all_servers">Closed All Servers!!</string>
   <string name="Donate_3d">Donate 3$</string>
+  <string name="Donate_10">Donate 10$</string>
+  <string name="Donate_50">Donate 50$!!?!</string>
+  <string name="Donate_100">Donate 100$$$ (OMG)</string>
+
   <string name="thanks_for_donations" translatable="false">I love you! Thanks!!</string>
+  <string name="click_to_login">Click to Sign-in with Google!</string>
 </resources>

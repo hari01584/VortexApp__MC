@@ -43,12 +43,13 @@ public class ClansFragment extends Fragment {
         donationsManager = new DonationsManager(getContext());
 
         Button m1 = getActivity().findViewById(R.id.button_donate_3);
-        m1.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                donationsManager.donateIndex(getActivity(), 0);
-            }
-        });
+        m1.setOnClickListener(view1 -> donationsManager.donateIndex(getActivity(), 0));
+        Button m2 = getActivity().findViewById(R.id.button_donate_10);
+        m2.setOnClickListener(view1 -> donationsManager.donateIndex(getActivity(), 1));
+        Button m3 = getActivity().findViewById(R.id.button_donate_50);
+        m3.setOnClickListener(view1 -> donationsManager.donateIndex(getActivity(), 2));
+        Button m4 = getActivity().findViewById(R.id.button_donate_100);
+        m4.setOnClickListener(view1 -> donationsManager.donateIndex(getActivity(), 3));
     }
 
 }

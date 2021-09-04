@@ -25,10 +25,12 @@ import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -184,10 +186,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initilizeAccount() {
         FirebaseUser currentUser = mainViewModel.mAuth.getCurrentUser();
-        if(currentUser!=null && currentUser.isAnonymous()){
-            Intent i = mGoogleSignInClient.getSignInIntent();
-            googleSignInCallback.launch(i);
-        }
+//        if(currentUser!=null && currentUser.isAnonymous()){
+//            googleSignInFlowStart();
+//        }
 
         if(currentUser==null){
             mainViewModel.mAuth.signInAnonymously()
@@ -212,6 +213,11 @@ public class MainActivity extends AppCompatActivity {
         else{
             onSignInSuccess(currentUser);
         }
+    }
+
+    public void googleSignInFlowStart() {
+        Intent i = mGoogleSignInClient.getSignInIntent();
+        googleSignInCallback.launch(i);
     }
 
     private void onSignInSuccess(FirebaseUser o) {

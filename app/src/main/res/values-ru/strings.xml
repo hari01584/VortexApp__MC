@@ -37,8 +37,12 @@
 	<string name="updated_image">Изображение успешно обновлено!</string>
 	<string name="updated_name">Успешно обновлено!</string>
 	<string name="too_long_name">Ошибка! Длинное имя> 20</string>
-	<string name="first_time_anony">Анонимный аккаунт создан! Если вам нравится приложение, подумайте о том, чтобы войти в систему с учетной записью Google при следующем запуске приложения.</string>
+	<string name="first_time_anony">Анонимный аккаунт создан! Если вам нравится приложение, рассмотрите возможность входа в систему с учетной записью google на странице профилей !!!</string>
 	<string name="stop_server">Закройте любой существующий сервер</string>
 	<string name="closed_all_servers">Закрыты все сервера !!</string>
 	<string name="Donate_3d">Пожертвовать 3 $</string>
+	<string name="Donate_10">Пожертвовать 10 $</string>
+	<string name="Donate_50">Пожертвуйте 50 $ !!?!</string>
+	<string name="Donate_100">Пожертвовать 100 $$$ (OMG)</string>
+	<string name="click_to_login">Нажмите, чтобы войти в систему с помощью Google!</string>
 </resources>

@@ -200,6 +200,24 @@
 
             </RelativeLayout>
 
+            <RelativeLayout android:id="@+id/login_rl" style="@style/profileDetailsLayout">
+                <ImageView
+                  android:id="@+id/loginImageView"
+                  android:src="@drawable/icon_naruto"
+                  style="@style/profileDetailsImage" />
+
+                <TextView
+                  android:text="Login"
+                  android:layout_toRightOf="@id/loginImageView"
+                  style="@style/profileDetailsTextMain" />
+
+                <TextView
+                  android:text="@string/click_to_login"
+                  android:layout_toRightOf="@id/loginImageView"
+                  style="@style/profileDetailsMiniText" />
+
+            </RelativeLayout>
+
             <View style="@style/proifleDetailsView" />
 
         </LinearLayout>
