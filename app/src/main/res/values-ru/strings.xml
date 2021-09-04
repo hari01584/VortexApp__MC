@@ -40,9 +40,9 @@
 	<string name="first_time_anony">Анонимный аккаунт создан! Если вам нравится приложение, рассмотрите возможность входа в систему с учетной записью google на странице профилей !!!</string>
 	<string name="stop_server">Закройте любой существующий сервер</string>
 	<string name="closed_all_servers">Закрыты все сервера !!</string>
-	<string name="Donate_3d">Пожертвовать 3 $</string>
-	<string name="Donate_10">Пожертвовать 10 $</string>
-	<string name="Donate_50">Пожертвуйте 50 $ !!?!</string>
-	<string name="Donate_100">Пожертвовать 100 $$$ (OMG)</string>
+	<string name="Donate_3d">Пожертвовать 218 ₽</string>
+	<string name="Donate_10">Пожертвовать 728 ₽</string>
+	<string name="Donate_50">Пожертвуйте 3642 ₽ !!?!</string>
+	<string name="Donate_100">Пожертвовать 7283 ₽ (OMG)</string>
 	<string name="click_to_login">Нажмите, чтобы войти в систему с помощью Google!</string>
 </resources>
